@@ -7,5 +7,6 @@ function cancelar() {
 }
 
 function borrar(idRaton) {
-    window.location="borraRaton.jsp";
+     window.location="borraRaton.jsp";
+    
 }

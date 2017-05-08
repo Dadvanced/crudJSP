@@ -47,8 +47,19 @@
                         out.println("<td>" + listado.getString("MARCA") + "</td>");
                         out.println("<td>" + listado.getString("TIPO") + "</td>");
                         out.println("<td>" + listado.getString("PRECIO") + "</td>");
-                        out.println("<td><button type='button' class='btn btn-danger' id='del" + idRaton + " ' onclick='borrar(" + idRaton + ")'>Eliminar</button>");
-                        out.println("<button type='button' class='btn btn-warning' id='edit" + idRaton + " ' onclick='modificar(" + idRaton + ")'>Editar</button></td>");
+                        %>
+                        <td>
+                        <form action="borraRaton.jsp">
+                            <input type="hidden" name="idRaton" />
+                            <button type='submit' class='btn btn-danger'>Eliminar</button>
+                        </form>
+                        <form action="editaRaton.jsp">
+                            <input type="hidden" name="idRaton"/>
+                            <button type='button' class='btn btn-warning'>Editar</button></td>");
+                        </form>
+                        <%
+                        //out.println("<td><button type='submit' class='btn btn-danger' id='del" + idRaton + " ' onclick='borrar(" + idRaton + ")'>Eliminar</button>");
+                        //out.println("<button type='button' class='btn btn-warning' id='edit" + idRaton + " ' onclick='modificar(" + idRaton + ")'>Editar</button></td>");
                     }
                     conexion.close();
                 %>
