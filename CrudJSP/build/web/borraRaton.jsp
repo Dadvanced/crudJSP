@@ -22,7 +22,7 @@
             Class.forName("com.mysql.jdbc.Driver");
             Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ratonleon","root", "");
             Statement s = conexion.createStatement();
-            s.execute ("DELETE FROM ratones WHERE idRaton=" + request.getParameter("ID"));
+            s.execute ("DELETE FROM ratones WHERE ID=" + request.getParameter("idRaton"));
         %>
         <div class="alert alert-danger" role="alert">Se ha borrado el ratón seleccionado</div> 
     </body>

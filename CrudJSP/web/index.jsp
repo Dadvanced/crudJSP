@@ -25,7 +25,7 @@
     <body>
         <h1>Listado de ratones</h1>
         <br>
-        <button type="button" class="btn btn-success" onclick="nuevo()">Añadir</button>
+        <button type="button" class="btn btn-success" onclick='nuevo()'>Añadir</button>
         
         <div class="panel panel-default">
             <div class="panel-heading">Ratones</div>
