@@ -33,8 +33,7 @@
                     <tr>
                         <td><b>MARCA</b></td><td><b>TIPO</b></td><td><b>PRECIO</b></td><td><b>Acciones</b></td>
                     </tr>
-                <% 
-                    int id = 1; //usaremos ésta variable para editar o borrar un registro (es independiente al ID de la BBDD)
+                <%
                     Class.forName("com.mysql.jdbc.Driver");
                     Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ratonleon","root", "");
                     Statement s = conexion.createStatement();
@@ -43,13 +42,13 @@
 
 
                     while (listado.next()) {
+                        int idRaton = Integer.valueOf(listado.getString("ID"));
                         out.println("<tr>");
                         out.println("<td>" + listado.getString("MARCA") + "</td>");
                         out.println("<td>" + listado.getString("TIPO") + "</td>");
                         out.println("<td>" + listado.getString("PRECIO") + "</td>");
-                        out.println("<td><button type=\"button\" " + " " + "class=\"btn btn-danger\" " + " " + "id=\"del" + id + "\">Eliminar</button>");
-                        out.println("<button type=\"button\" " + " " + "class=\"btn btn-warning\" " + " " + "id=\"edit" + id + "\">Editar</button></td>");
-                        id++;
+                        out.println("<td><button type='button' class='btn btn-danger' id='del" + idRaton + " ' onclick='borrar(" + idRaton + ")'>Eliminar</button>");
+                        out.println("<button type='button' class='btn btn-warning' id='edit" + idRaton + " ' onclick='modificar(" + idRaton + ")'>Editar</button></td>");
                     }
                     conexion.close();
                 %>

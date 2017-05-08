@@ -14,6 +14,8 @@
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <META HTTP-EQUIV="REFRESH" CONTENT="5; URL=index.jsp"> 
     </head>
     <body>
         <%
@@ -22,10 +24,10 @@
             Statement s = conexion.createStatement();
             request.setCharacterEncoding("UTF-8");
             
-            String insercion = "INSERT INTO ratones (`MARCA`, `TIPO`, `PRECIO`) VALUES ("
-            + (request.getParameter("marca"))
-            + ", '" + request.getParameter("tipo")
-            + "', " + Double.valueOf(request.getParameter("precio")) + "')";
+            String insercion = "INSERT INTO ratones (`MARCA`, `TIPO`, `PRECIO`) VALUES ('"
+            + request.getParameter("marca")
+            + "', '" + request.getParameter("tipo")
+            + "', " + Integer.valueOf(request.getParameter("precio")) + ")";
             s.execute(insercion);
             conexion.close();
             %>

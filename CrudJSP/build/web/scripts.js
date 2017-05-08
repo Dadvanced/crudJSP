@@ -5,3 +5,7 @@ function nuevo() {
 function cancelar() {
     window.location="index.jsp";
 }
+
+function borrar(idRaton) {
+    window.location="borraRaton.jsp";
+}
