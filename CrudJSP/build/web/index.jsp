@@ -25,7 +25,7 @@
     <body>
         <h1>Listado de ratones</h1>
         <br>
-        <button type="button" class="btn btn-success" onclick='nuevo()'>Añadir</button>
+        <button type="button" class="btn btn-success" onclick='nuevo()'><span class="glyphicon glyphicon-plus-sign"></span></button>
         
         <div class="panel panel-default">
             <div class="panel-heading">Ratones</div>
@@ -51,16 +51,18 @@
                         <td>
                         <form action="borraRaton.jsp">
                             <input type="hidden" name="idRaton" />
-                            <button type='submit' class='btn btn-danger'>Eliminar</button>
+                            <button type='submit' class='btn btn-danger'><span class="glyphicon glyphicon-remove-sign"></span></button>
                         </form>
-                        <form action="editaRaton.jsp">
+                        <form method="get" action="editaRaton.jsp">
                             <input type="hidden" name="idRaton"/>
-                            <button type='button' class='btn btn-warning'>Editar</button></td>");
+                            <input type="hidden" name="marca" value="<%=listado.getString("marca") %>">
+                            <input type="hidden" name="tipo" value="<%=listado.getString("tipo") %>">
+                            <input type="hidden" name="precio" value="<%=listado.getString("precio") %>">
+                            <button type='submit' class='btn btn-warning'><span class="glyphicon glyphicon-edit"></span></button>
                         </form>
+                        </td>
                         <%
-                        //out.println("<td><button type='submit' class='btn btn-danger' id='del" + idRaton + " ' onclick='borrar(" + idRaton + ")'>Eliminar</button>");
-                        //out.println("<button type='button' class='btn btn-warning' id='edit" + idRaton + " ' onclick='modificar(" + idRaton + ")'>Editar</button></td>");
-                    }
+                         } //while
                     conexion.close();
                 %>
                 </table>
