@@ -17,6 +17,7 @@
         <title>Ratonleon</title>
         
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="scripts.js"></script>
         
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -24,6 +25,7 @@
     <body>
         <h1>Listado de ratones</h1>
         <br>
+        <button type="button" class="btn btn-success" onclick="nuevo()">Añadir</button>
         
         <div class="panel panel-default">
             <div class="panel-heading">Ratones</div>

@@ -3,11 +3,18 @@ body {
 }
 
 h1 {
-    color: white;
+    text-align: center;
+}
+
+#nuevoraton {
     text-align: center;
 }
 
 div.panel-heading {
     text-align: center;
     font-size: 20px;
+}
+
+form {
+    text-align: center;
 }
