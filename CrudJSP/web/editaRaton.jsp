@@ -27,22 +27,22 @@
                     <div class="col-md-4 col-md-offset-4">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="hidden" class="form-control" placeholder="<%=request.getParameter("idRaton") %>" aria-describedby="sizing-addon2">
+                                <input type="hidden" name="ID" class="form-control" value="<%=request.getParameter("ID") %>" aria-describedby="sizing-addon2">
                             </div>
 
                             <div class="input-group">
                                 <span class="input-group-addon" id="sizing-addon2">Marca</span>
-                                <input type="text" class="form-control" placeholder="<%=request.getParameter("marca") %>" aria-describedby="sizing-addon2">
+                                <input type="text" name="marca" class="form-control" value="<%=request.getParameter("marca") %>" placeholder="<%=request.getParameter("marca") %>" aria-describedby="sizing-addon2">
                             </div>
 
                             <div class="input-group">
                                 <span class="input-group-addon" id="sizing-addon2">Tipo</span>
-                                <input type="text" class="form-control" placeholder="<%=request.getParameter("tipo") %>" aria-describedby="sizing-addon2">
+                                <input type="text" name="tipo" class="form-control" value="<%=request.getParameter("tipo") %>" placeholder="<%=request.getParameter("tipo") %>" aria-describedby="sizing-addon2">
                             </div>
 
                             <div class="input-group">
                                 <span class="input-group-addon" id="sizing-addon2">Precio</span>
-                                <input type="text" class="form-control" placeholder="<%=request.getParameter("precio") %>" aria-describedby="sizing-addon2">
+                                <input type="number" name="precio" class="form-control" value="<%=Float.valueOf(request.getParameter("precio")) %>" placeholder="<%=request.getParameter("precio") %>" aria-describedby="sizing-addon2">
                              </div>
                         </div>
                          <button type="submit" class="btn btn-success">Aceptar</button>

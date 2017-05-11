@@ -18,16 +18,16 @@
         <META HTTP-EQUIV="REFRESH" CONTENT="5; URL=index.jsp"> 
     </head>
     <body>
+        <% request.setCharacterEncoding("UTF-8"); %>
         <%
             Class.forName("com.mysql.jdbc.Driver");
             Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/ratonleon","root", "");
             Statement s = conexion.createStatement();
-            request.setCharacterEncoding("UTF-8");
-            
+                        
             String insercion = "INSERT INTO ratones (`MARCA`, `TIPO`, `PRECIO`) VALUES ('"
             + request.getParameter("marca")
             + "', '" + request.getParameter("tipo")
-            + "', " + Integer.valueOf(request.getParameter("precio")) + ")";
+            + "', " + Float.valueOf(request.getParameter("precio")) + ")";
             s.execute(insercion);
             conexion.close();
             %>

@@ -42,7 +42,7 @@
 
 
                     while (listado.next()) {
-                        int idRaton = Integer.valueOf(listado.getString("ID"));
+                        //Float idRaton = Float.valueOf(listado.getString("ID"));
                         out.println("<tr>");
                         out.println("<td>" + listado.getString("MARCA") + "</td>");
                         out.println("<td>" + listado.getString("TIPO") + "</td>");
@@ -50,15 +50,15 @@
                         %>
                         <td>
                         <form action="borraRaton.jsp">
-                            <input type="hidden" name="idRaton" />
-                            <button type='submit' class='btn btn-danger'><span class="glyphicon glyphicon-remove-sign"></span></button>
+                            <input type="hidden" name="ID" value="<%=listado.getString("ID") %>" />
+                            <button type='submit' class='btn btn-danger' title="Borrar"><span class="glyphicon glyphicon-remove-sign"></span></button>
                         </form>
                         <form method="get" action="editaRaton.jsp">
-                            <input type="hidden" name="idRaton"/>
-                            <input type="hidden" name="marca" value="<%=listado.getString("marca") %>">
-                            <input type="hidden" name="tipo" value="<%=listado.getString("tipo") %>">
-                            <input type="hidden" name="precio" value="<%=listado.getString("precio") %>">
-                            <button type='submit' class='btn btn-warning'><span class="glyphicon glyphicon-edit"></span></button>
+                            <input type="hidden" name="ID" value="<%=listado.getString("ID") %>"/>
+                            <input type="hidden" name="marca" value="<%=listado.getString("MARCA") %>">
+                            <input type="hidden" name="tipo" value="<%=listado.getString("TIPO") %>">
+                            <input type="hidden" name="precio" value="<%=listado.getString("PRECIO") %>">
+                            <button type='submit' class='btn btn-warning' title="Editar"><span class="glyphicon glyphicon-edit"></span></button>
                         </form>
                         </td>
                         <%

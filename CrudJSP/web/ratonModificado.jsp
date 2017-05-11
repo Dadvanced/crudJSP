@@ -27,9 +27,9 @@
       
       String actualizacion = "UPDATE ratones SET "
                            + "MARCA='" + request.getParameter("marca")
-                           + "',PRECIO=" + Integer.valueOf(request.getParameter("precio"))
+                           + "',PRECIO=" + Float.valueOf(request.getParameter("precio"))
                            + ", TIPO='" + request.getParameter("tipo")
-                           + "' WHERE ID=" + Integer.valueOf(request.getParameter("idRaton"));
+                           + "' WHERE ID=" + Integer.valueOf(request.getParameter("ID"));
       s.execute(actualizacion);      
       conexion.close();
     %> 
